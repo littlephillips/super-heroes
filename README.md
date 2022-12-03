@@ -41,7 +41,7 @@ belongs to a `Power`
 ```
 Strong, Weak, Average
 ```
-## `Add validation Power`
+## `Add validation to Power`
 ## `description` 
 ```
 must be present and atleast 20 characters long
