@@ -78,3 +78,7 @@ if not created return   : validation errors
 gem "active_model_serializers"
 ```
 
+
+
+   rails g resource Hero name super_name --no-test-framework
+   rails g resource HeroPower strength power_id hero_id --no-test-framework
