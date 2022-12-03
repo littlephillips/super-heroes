@@ -1,24 +1,80 @@
-# README
+# Project name: Superheroes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Objective :create a rails api 
+# 3 resources (tables)
 
-Things you may want to cover:
+## `Hero` - attributes: 
+```
+id, name, super_name
+```
+## `Power` - attributes: 
+```
+id, name, description
+```
 
-* Ruby version
+## `HeroPower` - attributes 
+```
+strength, power_id, hero_id
+```
+# 
 
-* System dependencies
+# Models 
+## `Hero` - 
+```
+has many `Powers` thru `HeroPower`
+```
+## `Power` - 
+```
+has many `Hero`s thru `HeroPower`
+```
+## `HeroPower` - 
+```
+belongs to a `Hero` and 
+belongs to a `Power`
+```
+# 
 
-* Configuration
 
-* Database creation
+# Validation
+## `Add validation to HeroPower`
+## `strength` must be one of the following values: 
+```
+Strong, Weak, Average
+```
+## `description` 
+```
+must be present and atleast 20 characters long
+```
+#
 
-* Database initialization
+# Routes 
+## `Hero`
+```
+GET /heroes      : index resource
+GET /heroes/:id  : show resource
+error            : Hero not found
+```
 
-* How to run the test suite
+## `Power`
+```
+GET /powers               : index resource
+GET /powers/:id           : show resource
+error                     : Power not found
+PATCH /power/:id          : update resource
+error if does not exist   : Power not found
+error if not updated      : Validation errors
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## `HeroPower`
+```
+POST /hero_powers       : create resource
+if created, return associated hero
+if not created return   : validation errors
+```
+#
 
-* Deployment instructions
+# Serializer - track what is sent to client
+```
+gem "active_model_serializers"
+```
 
-* ...
