@@ -1,8 +1,5 @@
 class HeroPowersController < ApplicationController
 
-
-    # skip_before_action :verify_authenticity_token
-
     def create
         hero_power = HeroPower.create(hero_power_params)
         if hero_power.valid?
