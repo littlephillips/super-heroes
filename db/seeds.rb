@@ -1,11 +1,17 @@
 puts "seeding"
 
-# Power.create(name: "super strength", description: "gives the wielder super-human strengths")
-# Power.create(name: "flight", description: "gives the wielder the ability to fly through the skies at supersonic speed")
 
+10.times do 
+    Hero.create(name: Faker::Name.name, super_name: Faker::Superhero.name)
+    Power.create(name: Faker::Superhero.descriptor, description: Faker::Superhero.power )
+end
 
-# Hero.create(name: "Kamala Khan", super_name: "Ms. Marvel")
-# Hero.create(name: "Doreen Green", super_name: "Squirrel Girl" )
-
+HeroPower.create(strength: "Average", power_id:1, hero_id: 2)
+HeroPower.create(strength: "Strong", power_id:3, hero_id: 4)
+HeroPower.create(strength: "Weak", power_id:2, hero_id: 5)
+HeroPower.create(strength: "Strong", power_id:1, hero_id: 3)
+HeroPower.create(strength: "Weak", power_id:5, hero_id: 6)
+HeroPower.create(strength: "Average", power_id:3, hero_id: 2)
+HeroPower.create(strength: "Strong", power_id:6, hero_id: 1)
 
 puts "done seeding"

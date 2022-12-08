@@ -7,3 +7,4 @@ Rails.application.routes.draw do
   resources :hero_powers, only: [:create]
 
 end
+
